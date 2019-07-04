@@ -1,0 +1,1 @@
+This is the rock paper scissors assignment from The Odin Project Course. The purpose of this project is to practice JavaScript Basics. 
