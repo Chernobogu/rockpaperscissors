@@ -4,177 +4,24 @@
 <head>
   <title>Rock Paper Scissors TOP</title>
 </head>
-<body>
-  <script>
-	function computerPlay() {
-        let opponent = Math.floor(Math.random() * 3);
-        let throwOpponent = ((opponent == 0) ? "Rock" :
-        (opponent == 1) ? "Scissors" :
-        "Paper");
-        return throwOpponent;
-    }
+<body style ="text-align:center;">
+  <h1>Rock, Paper, Scissors</h1>
+  <p>First to 5 wins!</p>
+  <button id="btn" onclick="game('Rock')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Rock-paper-scissors_%28rock%29.png/600px-Rock-paper-scissors_%28rock%29.png"
+    height="120" width="120">  
+  </button>
+  <button id="btn" onclick="game('Paper')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Rock-paper-scissors_%28paper%29.png/600px-Rock-paper-scissors_%28paper%29.png"
+    height="120" width="120">  
+  </button>
+  <button id="btn" onclick="game('Scissors')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Rock-paper-scissors_%28scissors%29.png/1024px-Rock-paper-scissors_%28scissors%29.png"
+    height="120" width="120">  
+  </button>
 
-    function playRound() {
-        let p = playerSelection
-        let c = computerPlay()
-
-        let result = ((p.toUpperCase() == c.toUpperCase()) ? 0 :
-        (p.toUpperCase() == "ROCK" && c.toUpperCase() == "PAPER") ? -1 : 
-        (p.toUpperCase() == "ROCK" && c.toUpperCase() == "SCISSORS") ? 1 :
-        (p.toUpperCase() == "PAPER" && c.toUpperCase() == "ROCK") ? 1 :
-        (p.toUpperCase() == "PAPER" && c.toUpperCase() == "SCISSORS") ? -1 : 
-        (p.toUpperCase() == "SCISSORS" && c.toUpperCase() == "ROCK") ? -1 :
-        (p.toUpperCase() == "SCISSORS" && c.toUpperCase() == "PAPER") ? 1 :
-        NaN);
-        return result;
-    }
-
-    function game() {
-      let playerScore = 0
-      let computerScore = 0
-      let draw = 0
-      let playerSelection = prompt("Let's play Rock Paper Scissors!", "rock")
-      let computerSelection = computerPlay()
-      let message = ""
-      let messageThrows = ""
-
-      
-      if (playRound() == 1) {
-        playerScore++
-        if (playerSelection.toUpperCase() == "ROCK") {
-          message = "You win! Rock beats Scissors!"
-        } else if (playerSelection.toUpperCase() == "PAPER") {
-          message = "You win! Paper beats Rock!"
-        } else {
-          message = "You win! Scissors beats Paper!"
-        }
-      } else if (playRound() == -1) {
-        computerScore++
-        if (playerSelection.toUpperCase() == "ROCK") {
-          message = "You lose! Paper beats Rock!"
-        } else if (playerSelection.toUpperCase() == "PAPER") {
-          message = "You lose! Scissors beats Paper!"
-        } else {
-          message = "You lose! Rock beats Scissors!"
-        }
-      } else if (playRound() == 0){
-        draw++
-        message = `It's a draw! You both threw ${playerSelection}`
-      } else {
-        message = "Unrecognized input. Refresh page."
-      }
-      playerSelection = prompt(`${message} \nYou: ${playerScore} Computer: ${computerScore} Draws: ${draw}\nRound 2!`)
-      
-      if (playRound() == 1) {
-        playerScore++
-        if (playerSelection.toUpperCase() == "ROCK") {
-          message = "You win! Rock beats Scissors!"
-        } else if (playerSelection.toUpperCase() == "PAPER") {
-          message = "You win! Paper beats Rock!"
-        } else {
-          message = "You win! Scissors beats Paper!"
-        }
-      } else if (playRound() == -1) {
-        computerScore++
-        if (playerSelection.toUpperCase() == "ROCK") {
-          message = "You lose! Paper beats Rock!"
-        } else if (playerSelection.toUpperCase() == "PAPER") {
-          message = "You lose! Scissors beats Paper!"
-        } else {
-          message = "You lose! Rock beats Scissors!"
-        }
-      } else if (playRound() == 0){
-        draw++
-        message = `It's a draw! You both threw ${playerSelection}`
-      } else {
-        message = "Unrecognized input. Refresh page."
-      }
-      playerSelection = prompt(`${message} \nYou: ${playerScore} Computer: ${computerScore} Draws: ${draw}\nRound 3!`)
-      
-      if (playRound() == 1) {
-        playerScore++
-        if (playerSelection.toUpperCase() == "ROCK") {
-          message = "You win! Rock beats Scissors!"
-        } else if (playerSelection.toUpperCase() == "PAPER") {
-          message = "You win! Paper beats Rock!"
-        } else {
-          message = "You win! Scissors beats Paper!"
-        }
-      } else if (playRound() == -1) {
-        computerScore++
-        if (playerSelection.toUpperCase() == "ROCK") {
-          message = "You lose! Paper beats Rock!"
-        } else if (playerSelection.toUpperCase() == "PAPER") {
-          message = "You lose! Scissors beats Paper!"
-        } else {
-          message = "You lose! Rock beats Scissors!"
-        }
-      } else if (playRound() == 0){
-        draw++
-        message = `It's a draw! You both threw ${playerSelection}`
-      } else {
-        message = "Unrecognized input. Refresh page."
-      }
-      playerSelection = prompt(`${message} \nYou: ${playerScore} Computer: ${computerScore} Draws: ${draw}\nRound 4!`)
-      
-      if (playRound() == 1) {
-        playerScore++
-        if (playerSelection.toUpperCase() == "ROCK") {
-          message = "You win! Rock beats Scissors!"
-        } else if (playerSelection.toUpperCase() == "PAPER") {
-          message = "You win! Paper beats Rock!"
-        } else {
-          message = "You win! Scissors beats Paper!"
-        }
-      } else if (playRound() == -1) {
-        computerScore++
-        if (playerSelection.toUpperCase() == "ROCK") {
-          message = "You lose! Paper beats Rock!"
-        } else if (playerSelection.toUpperCase() == "PAPER") {
-          message = "You lose! Scissors beats Paper!"
-        } else {
-          message = "You lose! Rock beats Scissors!"
-        }
-      } else if (playRound() == 0){
-        draw++
-        message = `It's a draw! You both threw ${playerSelection}`
-      } else {
-        message = "Unrecognized input. Refresh page."
-      }
-      playerSelection = prompt(`${message} \nYou: ${playerScore} Computer: ${computerScore} Draws: ${draw}\nRound 5!`)
-      
-      if (playRound() == 1) {
-        playerScore++
-        if (playerSelection.toUpperCase() == "ROCK") {
-          message = "You win! Rock beats Scissors!"
-        } else if (playerSelection.toUpperCase() == "PAPER") {
-          message = "You win! Paper beats Rock!"
-        } else {
-          message = "You win! Scissors beats Paper!"
-        }
-      } else if (playRound() == -1) {
-        computerScore++
-        if (playerSelection.toUpperCase() == "ROCK") {
-          message = "You lose! Paper beats Rock!"
-        } else if (playerSelection.toUpperCase() == "PAPER") {
-          message = "You lose! Scissors beats Paper!"
-        } else {
-          message = "You lose! Rock beats Scissors!"
-        }
-      } else if (playRound() == 0){
-        draw++
-        message = `It's a draw! You both threw ${playerSelection}`
-      } else {
-        message = "Unrecognized input. Refresh page."
-      }
-      return alert(`That was fun! Final Score is\nYou: ${playerScore} Computer: ${computerScore} Draws: ${draw}`)
-
-    }
-    
-    let playerSelection = "rock"
-    //const computerSelection = computerPlay()
-    //let result = playRound(playerSelection, computerSelection)
-    //console.log(playRound(playerSelection, computerSelection))
-  </script>
+  <div id="scoreboard"></div>
 </body>
+<script src="main.js"></script>
+
 </html>
